@@ -3,7 +3,7 @@ import React from 'react';
 import OutlinedText from '@kdn0325/react-native-outlined-text';
 const { width, height } = Dimensions.get('screen');
 
-const Subscription = () => {
+const Subscription = (props) => {
 
     let subscribe = [
         { type: 'Remove Ads', icon: require('../assets/images/remove-ad.png'), cost: 1350 },
@@ -22,8 +22,8 @@ const Subscription = () => {
                         fontSize={14}
                         fontWeight={'500'}
                         outlineColor={'#000'}
-                        shadowLine={2}
-                        fontFamily='Roboto-BlackItalic'
+                        shadowLine={1}
+                        fontFamily='Supercell-Magic Regular'
                         customStyle={{ color: '#FFB002' }}
                     />
                     <ImageBackground source={require('../assets/images/button.png')} style={{ width: 80, height: 30, justifyContent: 'center', alignItems: 'center' }}>
@@ -32,8 +32,8 @@ const Subscription = () => {
                             fontSize={14}
                             fontWeight={'500'}
                             outlineColor={'#000'}
-                            shadowLine={2}
-                            fontFamily='Roboto-BlackItalic'
+                            shadowLine={1}
+                            fontFamily='Supercell-Magic Regular'
                             customStyle={{ color: '#fff' }}
                         />
                     </ImageBackground>
@@ -47,19 +47,19 @@ const Subscription = () => {
         <View style={style.container}>
             <View style={style.subscriptionContainer}>
                 <View style={style.header}>
-                    <View style={{ width: '24%', backgroundColor: '#F0E6DF', top: '-50%', paddingVertical: 10, borderRadius: 6, marginLeft: '37%' }}>
+                    <View style={{ width: '24%', backgroundColor: '#F0E6DF', top: '-50%', paddingVertical: 10, borderRadius: 6, marginLeft: '37%', borderColor: '#000', borderWidth: 1 }}>
                         <OutlinedText
                             text={'SHOP'}
                             fontSize={20}
                             fontWeight={'500'}
                             outlineColor={'#000'}
-                            shadowLine={2}
-                            fontFamily='Roboto-BlackItalic'
+                            shadowLine={1}
+                            fontFamily='Supercell-Magic Regular'
                             customStyle={{ color: '#FFB002' }}
                         />
                     </View>
 
-                    <TouchableOpacity style={style.closeBtn}>
+                    <TouchableOpacity onPress={()=>props.setshop(false)} style={style.closeBtn}>
                         <Image style={style.close} source={require('../assets/images/close.png')} />
                     </TouchableOpacity>
                 </View>
@@ -93,7 +93,7 @@ const style = StyleSheet.create({
         alignItems: 'center'
     },
     row: {
-        width: width * 0.85,
+        width: width * 0.88,
         alignSelf: 'center',
         backgroundColor: '#F0E6DF',
         borderRadius: 8,
@@ -101,7 +101,8 @@ const style = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
-        marginBottom: 10
+        paddingVertical: 12,
+        marginBottom: 12
     },
     icon: {
         width: 29.24,
