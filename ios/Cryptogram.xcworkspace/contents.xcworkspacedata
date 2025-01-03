@@ -4,6 +4,48 @@
    <FileRef
       location = "group:Cryptogram.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:Cryptogram"
+      name = "Cryptogram">
+      <FileRef
+         location = "group:LaunchScreen.storyboard">
+      </FileRef>
+      <FileRef
+         location = "group:AppDelegate.h">
+      </FileRef>
+      <FileRef
+         location = "group:main.m">
+      </FileRef>
+      <FileRef
+         location = "group:PrivacyInfo.xcprivacy">
+      </FileRef>
+      <Group
+         location = "group:Images.xcassets"
+         name = "Images.xcassets">
+         <Group
+            location = "group:AppIcon.appiconset"
+            name = "AppIcon.appiconset">
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:AppDelegate.mm">
+      </FileRef>
+      <FileRef
+         location = "group:OutlinedLabel.h">
+      </FileRef>
+      <FileRef
+         location = "group:Info.plist">
+      </FileRef>
+      <FileRef
+         location = "group:OutlinedLabel.mm">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

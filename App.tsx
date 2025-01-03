@@ -3,13 +3,17 @@ import Route from './routes/Route';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { enableFreeze } from 'react-native-screens';
+import SplashScreen from 'react-native-splash-screen';
 
 enableFreeze(true);
 
 const App = () => {
 
   useEffect(()=>{
-    console.log('App started')
+    setTimeout(() => {
+      console.log('Hiding Splash Screen');
+      SplashScreen.hide();
+    }, 3000);
   },[]);
   
   return (
