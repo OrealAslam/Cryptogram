@@ -78,13 +78,6 @@ export default function PlayGame({ navigation }) {
         }
     };
 
-    const handlePress = (item) => {
-        if (!item.show) { // Only handle press if the item is not already shown
-            setfocusId(item.id);
-            setcorrectletter(item.letter);
-        }
-    };
-
     const renderPuzzle = () => {
         let content = [];
         let currentWord = [];
@@ -93,7 +86,7 @@ export default function PlayGame({ navigation }) {
             if (item.letter === '*' || item.letter === ' ') { // Handle space or special character as word separator
                 if (currentWord.length > 0) {
                     content.push(
-                        <View style={styles.wordContainer} key={`word-${index}`}>
+                        <View style={[styles.wordContainer, item.show == true ? {backgroundColor: 'transparent'}: {backgroundColor: '#fff'}]} key={`word-${index}`}>
                             {currentWord}
                         </View>
                     );
@@ -128,20 +121,24 @@ export default function PlayGame({ navigation }) {
 
     const getLetterStyle = (item) => ({
         ...styles.textInput,
-        backgroundColor: !item.show && focusId === item.id ? '#FFB002' : item.show ? 'transparent' : '#fff',
-        textAlign: 'center',
+        backgroundColor: focusId === item.id ? '#FFB002' : '#fff',
+        textAlign: 'center'
     });
 
     return (
         <>
             <SafeAreaView style={styles.container}>
+                {/* Header */}
                 <PlayGameHeader mistake={mistake} round={round} />
+                {/* Puzzle Area */}
                 <View style={styles.puzzleArea}>
                     <PuzzleHeader />
                     <ScrollView contentContainerStyle={styles.scrollContent}>
                         {renderPuzzle()}
                     </ScrollView>
                 </View>
+
+                {/* Keyboard Area */}
                 <View style={styles.keyboardArea}>
                     <AlphabetKeyboard activeLetters={activeLetters} setletterpressed={setletterpressed} changeIndex={changeIndex} />
                 </View>
@@ -150,7 +147,6 @@ export default function PlayGame({ navigation }) {
         </>
     );
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -174,8 +170,7 @@ const styles = StyleSheet.create({
     wordContainer: {
         flexDirection: 'row',
         flexWrap: 'nowrap',
-        marginRight: 30,
-        marginBottom: 40, // Added margin to the bottom of each row
+        marginRight: 10,
     },
     textInput: {
         height: 30,

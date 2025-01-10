@@ -8,8 +8,8 @@ const Route = () => {
     return (
         <>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="PlayGame" component={PlayGame} />
+                <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+                <Stack.Screen name="PlayGame" component={PlayGame} options={{headerTitle: ''}}/>
             </Stack.Navigator>
         </>
     )

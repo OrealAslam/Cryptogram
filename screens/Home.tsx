@@ -196,7 +196,8 @@ const style = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-around',
         backgroundColor: '#F7F2EF',
-        padding: 10
+        paddingHorizontal: 10,
+        paddingVertical: 0
     },
     headerBadge: { width: 53, height: 32, backgroundColor: '#E7D2C6', borderRadius: 7, justifyContent: 'center', alignItems: 'flex-end', paddingEnd: 10, marginLeft: '5%' },
     headerText: { color: '#BE8763', fontSize: 12, fontWeight: '600' },
