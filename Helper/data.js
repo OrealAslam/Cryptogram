@@ -8,13 +8,13 @@ let puzzleData = {
         },
         {
             id: 2,
-            show: false,
+            show: true,
             number: 6,
             letter: "H"
         },
         {
             id: 3,
-            show: true,
+            show: false,
             number: 1,
             letter: "E"
         },
@@ -26,7 +26,7 @@ let puzzleData = {
         },
         {
             id: 5,
-            show: false,
+            show: true,
             number: 1,
             letter: "E"
         },
@@ -44,13 +44,13 @@ let puzzleData = {
         },
         {
             id: 7,
-            show: false,
+            show: true,
             number: 6,
             letter: "H"
         },
         {
             id: 8,
-            show: true,
+            show: false,
             number: 1,
             letter: "E"
         },
@@ -74,7 +74,7 @@ let puzzleData = {
         },
         {
             id: 11,
-            show: false,
+            show: true,
             number: 15,
             letter: "I"
         },
@@ -92,27 +92,27 @@ let puzzleData = {
         },
         {
             id: 13,
-            show: true,
+            show: false,
             number: 5,
-            letter: "W"
+            letter: "L"
         },
         {
             id: 14,
             show: true,
             number: 15,
-            letter: "I"
+            letter: "O"
         },
         {
             id: 15,
-            show: false,
+            show: true,
             number: 21,
-            letter: "L"
+            letter: "V"
         },
         {
             id: 16,
             show: false,
             number: 21,
-            letter: "L"
+            letter: "E"
         },
         {
             id: 0,
@@ -122,13 +122,13 @@ let puzzleData = {
         },
         {
             id: 17,
-            show: false,
+            show: true,
             number: 12,
             letter: "T"
         },
         {
             id: 18,
-            show: false,
+            show: true,
             number: 6,
             letter: "H"
         },
@@ -178,31 +178,25 @@ let puzzleData = {
             id: 24,
             show: false,
             number: 27,
-            letter: "P"
+            letter: "L"
         },
         {
             id: 25,
-            show: false,
+            show: true,
             number: 22,
-            letter: "O"
+            letter: "I"
         },
         {
             id: 26,
             show: true,
             number: 5,
-            letter: "W"
+            letter: "F"
         },
         {
             id: 27,
-            show: true,
+            show: false,
             number: 1,
             letter: "E"
-        },
-        {
-            id: 28,
-            show: false,
-            number: 11,
-            letter: "R"
         }
     ]
 }

@@ -3,7 +3,7 @@ import React from "react";
 import { View, TouchableOpacity, Image, Text, StyleSheet, Dimensions, ScrollView } from "react-native";
 const { width, height } = Dimensions.get('screen');
 
-export default function Statistics(props) {
+export default function Settings({ setsettings }) {
     return (
         <View style={style.container}>
             <View style={style.mainContainer} showsVerticalScrollIndicator={false} scrollsToTop>
@@ -20,7 +20,7 @@ export default function Statistics(props) {
                         />
                     </View>
 
-                    <TouchableOpacity onPress={()=>props.setshowstats(false)} style={style.closeBtn}>
+                    <TouchableOpacity onPress={() => setsettings(false)} style={style.closeBtn}>
                         <Image style={style.close} source={require('../assets/images/close.png')} />
                     </TouchableOpacity>
                 </View>

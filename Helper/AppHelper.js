@@ -25,6 +25,23 @@ export const get_async_data = async (name) => {
     }
 };
 
+export const incrementValue = async () => {
+  try {
+    // Retrieve the current value from AsyncStorage
+    const value = await AsyncStorage.getItem('key');
+
+    // If value is found and it's a number, increment it
+    let newValue = value ? parseInt(value, 10) + 1 : 1;
+
+    // Save the new incremented value back to AsyncStorage
+    await AsyncStorage.setItem('key', newValue.toString());
+
+    console.log('Updated value:', newValue); // Log the new value
+  } catch (error) {
+    console.error('Failed to retrieve or update value:', error);
+  }
+};
+
 export const playSound = (music) => {
     // Load the sound
     const sound = new Sound(music, Sound.MAIN_BUNDLE, (error) => {
@@ -47,3 +64,10 @@ export const playSound = (music) => {
         });
     });
 };
+
+export const customFunc = (letterpressed, count) => {
+    if (count == 0) {
+        return {color: 'red'}
+    }
+    return {}
+}

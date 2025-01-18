@@ -80,8 +80,8 @@ const style = StyleSheet.create({
     subscriptionContainer: {
         width: '100%',
         backgroundColor: '#fff',
-        borderTopLeftRadius: 40,
-        borderTopEndRadius: 40,
+        borderTopLeftRadius: 20,
+        borderTopEndRadius: 20,
         flexDirection: 'column',
         marginTop: 'auto',
         paddingBottom: 20
@@ -96,12 +96,12 @@ const style = StyleSheet.create({
         width: width * 0.88,
         alignSelf: 'center',
         backgroundColor: '#F0E6DF',
-        borderRadius: 8,
+        borderRadius: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
-        paddingVertical: 12,
+        paddingVertical: 15,
         marginBottom: 12
     },
     icon: {
@@ -114,7 +114,7 @@ const style = StyleSheet.create({
     }, 
     closeBtn: {
         marginLeft: 'auto',
-        marginRight: '10%',
+        marginRight: '3%',
         top: '-50%'
     }
 });

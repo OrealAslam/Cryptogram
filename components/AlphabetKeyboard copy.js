@@ -4,9 +4,15 @@ import { View, Text, StyleSheet, TouchableOpacity, Dimensions, Image } from 'rea
 // Get screen dimensions
 const { width } = Dimensions.get('window');
 
-// QWERTY keyboard layout with isActive and isRepeating properties
+// QWERTY keyboard layout
+const rows = [
+  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+  ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+  ['Z', 'X', 'C', 'V', 'B', 'N', 'M'],
+];
 
-const AlphabetKeyboard = ({ activeLetters, setletterpressed, changeIndex, rows }) => {
+const AlphabetKeyboard = ({ activeLetters, setletterpressed, changeIndex }) => {
+
   const handleKeyPress = (key) => {
     setletterpressed(key);
   };
@@ -15,29 +21,27 @@ const AlphabetKeyboard = ({ activeLetters, setletterpressed, changeIndex, rows }
     <View style={styles.container}>
       {rows.map((row, rowIndex) => (
         <View key={rowIndex} style={styles.row}>
-          {row.map((keyObj, keyIndex) => {
-            const { letter, isActive, isRepeating } = keyObj;
-            // console.log(letter, isActive, isRepeating)
+          {row.map((key, keyIndex) => {
+            const isActive = activeLetters.includes(key);
             return (
               <TouchableOpacity
                 key={keyIndex}
-                disabled={!isActive}
+                disabled={!isActive} // Disable if key is not in activeLetters
                 style={[
                   styles.key,
-                  isActive && isRepeating
+                  isActive
                     ? { backgroundColor: '#01A56B' }
-                    : { backgroundColor: '#B0B0B0' },
-
+                    : { backgroundColor: '#DDDBDE' },
                 ]}
-                onPress={() => handleKeyPress(letter)}
+                onPress={() => handleKeyPress(key)}
               >
                 <Text
                   style={[
                     styles.keyText,
-                    !isRepeating ? { color: '#000' } : { color: '#fff' },
+                    isActive ? { color: '#fff' } : { color: '#B0B0B0' },
                   ]}
                 >
-                  {letter}
+                  {key}
                 </Text>
               </TouchableOpacity>
             );

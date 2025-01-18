@@ -140,6 +140,7 @@ const Home = ({ navigation }: { navigation: any }) => {
                             fontFamily='Supercell-Magic Regular'
                         />
                     </ImageBackground>
+                    <Image style={style.pointingGif} source={require('../assets/images/pointing.gif')} />
                 </TouchableOpacity>
 
                 <View style={style.optionContainer}>
@@ -279,6 +280,15 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 40
+    },
+    pointingGif: {
+        width: 40,
+        height: 87,
+        resizeMode: 'contain',
+        position: 'absolute',
+        right: '9%',
+        bottom: '-5%',
+        transform: [{scale: 4}]
     },
     optionContainer: {
         width: width * 0.77,
